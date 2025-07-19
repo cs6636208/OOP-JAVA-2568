@@ -1,3 +1,4 @@
+
 // ข้อ 7
 import java.util.Scanner;
 
@@ -11,9 +12,10 @@ public class CalculateFunction {
         System.out.println("Output is: " + result);
         scanner.close();
     }
+
     public static int CalculateFunc(int x, int n) {
         int sum = 0;
-        for(int i=0; i<=n; i++) {
+        for (int i = 0; i <= n; i++) {
             sum += Math.pow(x, i);
         }
         return sum;
