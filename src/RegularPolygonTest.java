@@ -4,6 +4,7 @@ class RegularPolygon {
     private double x;
     private double y;
 
+    // Default constructor
     public RegularPolygon() {
         this.n = 3;
         this.side = 1;
@@ -11,6 +12,7 @@ class RegularPolygon {
         this.x = 0;
     }
 
+    // Constructor with n and side
     public RegularPolygon(int n, double side) {
         this.n = n;
         this.side = side;
@@ -18,6 +20,7 @@ class RegularPolygon {
         this.y = 0;
     }
 
+    // Constructor with n, side, x, and y
     public RegularPolygon(int n, double side, double x, double y) {
         this.n = n;
         this.side = side;
@@ -25,6 +28,7 @@ class RegularPolygon {
         this.y = y;
     }
 
+    // Getters
     public int getN() {
         return this.n;
     }
@@ -41,6 +45,7 @@ class RegularPolygon {
         return this.y;
     }
 
+    // Setters
     public void setN(int n) {
         this.n = n;
     }
@@ -57,6 +62,7 @@ class RegularPolygon {
         this.y = y;
     }
 
+    // Methods to calculate perimeter and area
     public double getPerimeter() {
         return this.n * this.side;
     }
@@ -66,15 +72,17 @@ class RegularPolygon {
     }
 }
 
-
 public class RegularPolygonTest {
     public static void main(String[] args) {
         RegularPolygon regularPolygon1 = new RegularPolygon();
         RegularPolygon regularPolygon2 = new RegularPolygon(6, 4);
         RegularPolygon regularPolygon3 = new RegularPolygon(10, 4, 5.6, 7.8);
 
-        System.out.println("Polygon1 Perimeter : " + regularPolygon1.getPerimeter() + " Area : " + regularPolygon1.getArea());
-        System.out.println("Polygon2 Perimeter : " + regularPolygon2.getPerimeter() + " Area : " + regularPolygon2.getArea());
-        System.out.println("Polygon3 Perimeter : " + regularPolygon3.getPerimeter() + " Area : " + regularPolygon3.getArea());
+        System.out.println(
+                "Polygon1 Perimeter : " + regularPolygon1.getPerimeter() + " Area : " + regularPolygon1.getArea());
+        System.out.println(
+                "Polygon2 Perimeter : " + regularPolygon2.getPerimeter() + " Area : " + regularPolygon2.getArea());
+        System.out.println(
+                "Polygon3 Perimeter : " + regularPolygon3.getPerimeter() + " Area : " + regularPolygon3.getArea());
     }
 }
