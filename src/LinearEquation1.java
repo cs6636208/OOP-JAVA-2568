@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 class LinearEquation {
@@ -37,22 +38,22 @@ class LinearEquation {
     }
 
     public boolean isSolvable() {
-        return (a * d - b * c) != 0;
+        return ((a * d) - (b * c)) != 0;
     }
 
     public double getX() {
-        return (e * d - b * f) / (a * d - b * c);
+        return ((e * d) - (b * f)) / ((a * d) - (b * c));
     }
 
     public double getY() {
-        return (a * f - e * c) / (a * d - b * c);
+        return ((a * f) - (e * c)) / ((a * d) - (b * c));
     }
 }
 
 public class LinearEquation1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a b c d e f: ");
+        System.out.print("Enter a, b, c, d, e, f: ");
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
         double c = scanner.nextDouble();
@@ -60,14 +61,12 @@ public class LinearEquation1 {
         double e = scanner.nextDouble();
         double f = scanner.nextDouble();
 
-        LinearEquation linearEquation = new LinearEquation(a, b, c, d, e, f);
+        LinearEquation equation = new LinearEquation(a, b, c, d, e, f);
 
-        if (linearEquation.isSolvable()) {
-            System.out.printf("x is %.1f and y is %.1f\n", linearEquation.getX(), linearEquation.getY());
+        if (equation.isSolvable()) {
+            System.out.printf("x is %.1f and y is %.1f%n", equation.getX(), equation.getY());
         } else {
-            System.out.println("The equation has no solution");
+            System.out.println("The equation has no solution.");
         }
-
-        scanner.close();
     }
 }
