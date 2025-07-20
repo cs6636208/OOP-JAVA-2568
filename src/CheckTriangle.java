@@ -20,14 +20,14 @@ public class CheckTriangle {
 
     public static void main(String[] args) {
         double x0, y0, x1, y1, x2, y2;
-        Scanner input = new Scanner(System.in);
-        x0 = input.nextDouble();
-        y0 = input.nextDouble();
-        x1 = input.nextDouble();
-        y1 = input.nextDouble();
-        x2 = input.nextDouble();
-        y2 = input.nextDouble();
-        input.close();
+        Scanner scanner = new Scanner(System.in);
+        x0 = scanner.nextDouble();
+        y0 = scanner.nextDouble();
+        x1 = scanner.nextDouble();
+        y1 = scanner.nextDouble();
+        x2 = scanner.nextDouble();
+        y2 = scanner.nextDouble();
+        scanner.close();
         if (CheckTriangle.leftOfTheLine(x0, y0, x1, y1, x2, y2)) {
             System.out.println(2);
         } else if (CheckTriangle.onTheSameLine(x0, y0, x1, y1, x2, y2)) {
