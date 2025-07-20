@@ -61,10 +61,10 @@ public class LinearEquation1 {
         double e = scanner.nextDouble();
         double f = scanner.nextDouble();
 
-        LinearEquation equation = new LinearEquation(a, b, c, d, e, f);
+        LinearEquation linearEquation = new LinearEquation(a, b, c, d, e, f);
 
-        if (equation.isSolvable()) {
-            System.out.printf("x is %.1f and y is %.1f%n", equation.getX(), equation.getY());
+        if (linearEquation.isSolvable()) {
+            System.out.printf("x is %.1f and y is %.1f%n", linearEquation.getX(), linearEquation.getY());
         } else {
             System.out.println("The equation has no solution.");
         }

@@ -42,13 +42,13 @@ class PrimeNumber {
 public class PrimeNumberTest {
     public static void main(String[] args) {
         PrimeNumber primeNumber = new PrimeNumber();
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int number;
-        do{
-            number = input.nextInt();
+        do {
+            number = scanner.nextInt();
             primeNumber.addNumber(number);
-            
-        } while(number != 0);
+
+        } while (number != 0);
 
         int maxPrime = primeNumber.findMaxPrime();
         System.out.println(maxPrime);
