@@ -4,7 +4,7 @@ public class Light {
     private int count = 0;
     private int[][] N;
     private int[] M;
-    public Scanner input = new Scanner(System.in);
+    public Scanner scanner = new Scanner(System.in);
 
     public Light(int n, int m) {
         this.N = new int[n][2];
@@ -15,21 +15,21 @@ public class Light {
         return count;
     }
 
-    public void addPlane() {
+    public void AddPlane() {
         for (int i = 0; i < N.length; i++) {
             for (int j = 0; j < N[i].length; j++) {
-                N[i][j] = input.nextInt();
+                N[i][j] = scanner.nextInt();
             }
         }
     }
 
-    public void addLight() {
+    public void AddLight() {
         for (int i = 0; i < M.length; i++) {
-            M[i] = input.nextInt();
+            M[i] = scanner.nextInt();
         }
     }
 
-    public void countLight() {
+    public void CountNumberOfLight() {
         for (int i = 0; i < N.length; i++) {
             for (int j = 0; j < M.length; j++) {
                 if (N[i][0] < M[j] && M[j] < N[i][1]) {
@@ -43,10 +43,10 @@ public class Light {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int m = scanner.nextInt();
-        Light l1 = new Light(n, m);
-        l1.addPlane();
-        l1.addLight();
-        l1.countLight();
-        System.out.println(l1.getCount());
+        Light light = new Light(n, m);
+        light.AddPlane();
+        light.AddLight();
+        light.CountNumberOfLight();
+        System.out.println(light.getCount());
     }
 }
