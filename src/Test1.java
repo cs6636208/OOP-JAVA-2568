@@ -11,10 +11,11 @@ public class Test1 {
         System.out.println("Enter loan amount, for example 120000.95: ");
         double loanAmount = input.nextDouble();
 
-        double monthlyPayment = loanAmount * monthlyInterestRate / (1 - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12));
+        double monthlyPayment = loanAmount * monthlyInterestRate
+                / (1 - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12));
         double totalPayment = monthlyPayment * numberOfYears * 12;
-        monthlyPayment = (int)(monthlyPayment * 100) / 100.0;
-        totalPayment = (int)(totalPayment * 100) / 100.0;
+        monthlyPayment = (int) (monthlyPayment * 100) / 100.0;
+        totalPayment = (int) (totalPayment * 100) / 100.0;
         // Display results
         System.out.println("The monthly payment is " + monthlyPayment);
         System.out.println("The total payment is " + totalPayment);
