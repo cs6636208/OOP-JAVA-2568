@@ -15,25 +15,46 @@ class Point {
     }
 }
 
-public class ClosestPair {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        Point[] points = new Point[n];
-        for (int i = 0; i < n; i++) {
-            double x = scanner.nextDouble();
-            double y = scanner.nextDouble();
-            points[i] = new Point(x, y);
-        }
-        double minDistance = Double.MAX_VALUE;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                double distance = points[i].distanceTo(points[j]);
-                if (distance < minDistance) {
-                    minDistance = distance;
+class ClosestPairFinder {
+    private Point[] points;
+
+    public ClosestPairFinder(Point[] points) {
+        this.points = points;
+    }
+
+    public double findMinDistance() {
+        double minDist = Double.MAX_VALUE;
+        for (int i = 0; i < points.length; i++) {
+            for (int j = i + 1; j < points.length; j++) {
+                double dist = points[i].distanceTo(points[j]);
+                if (dist < minDist) {
+                    minDist = dist;
                 }
             }
         }
+        return minDist;
+    }
+}
+
+public class ClosestPair {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = Integer.parseInt(scanner.nextLine());
+        Point[] points = new Point[n];
+
+        for (int i = 0; i < n; i++) {
+            String[] input = scanner.nextLine().split(" ");
+            double x = Double.parseDouble(input[0]);
+            double y = Double.parseDouble(input[1]);
+            points[i] = new Point(x, y);
+        }
+
+        ClosestPairFinder finder = new ClosestPairFinder(points);
+        double minDistance = finder.findMinDistance();
+
         System.out.printf("%.2f\n", minDistance);
+
+        scanner.close();
     }
 }
